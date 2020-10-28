@@ -4449,7 +4449,7 @@ func TestExecSuccess(t *testing.T) {
 		q := `distinct_over_time((time() < 1700)[500s])`
 		r1 := netstorage.Result{
 			MetricName: metricNameExpected,
-			Values:     []float64{3, 3, 3, 3, nan, nan},
+			Values:     []float64{3, 3, 3, 3, 2, 1},
 			Timestamps: timestampsExpected,
 		}
 		resultExpected := []netstorage.Result{r1}
@@ -4460,7 +4460,7 @@ func TestExecSuccess(t *testing.T) {
 		q := `distinct_over_time((time() < 1700)[2.5i])`
 		r1 := netstorage.Result{
 			MetricName: metricNameExpected,
-			Values:     []float64{3, 3, 3, 3, nan, nan},
+			Values:     []float64{3, 3, 3, 3, 2, 1},
 			Timestamps: timestampsExpected,
 		}
 		resultExpected := []netstorage.Result{r1}
